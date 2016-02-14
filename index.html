@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css"></link>
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    </head>
+    <body align="center">
+        <div id="desktopContent" align="center">
+            <h1 style="color: silver">Please, visit this page from mobile device!</h1>
+        </div>
+        <div id="shadow"></div>
+        <div id="mobileContent" align="center"> 
+            <center>
+                <div class="table" align="center">
+                    <div class="cell" align="center">
+                        <div class="remote">
+                            <table height="100%" width="300" >
+                                <tr valign="center">
+                                    <td colspan="3" align="center" >
+                                        <div class="control button play" id="play"></div>
+                                    </td>
+                                </tr>
+                                <tr valign="center">
+                                    <td align="center">
+                                        <div class="control button pause" id="pause"></div>
+                                    </td>
+                                    <td align="center">
+                                        <img src="img/logo.png" width="80">
+                                    </td>
+                                    <td align="center">
+                                        <div class="control button mute" id="mute"></div>
+                                    </td>
+                                </tr>
+                                <tr valign="center">
+                                    <td colspan="3" align="center">
+                                        <div class="control button stop" id="stop"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <p /><br />
+                <button class="control" id="theater">Theater</button>
+                <button class="control" id="next">Next</button>
+                <p />
+                <button class="control" id="fullscreen">Fullscreen</button>
+                <button class="volume" id="volume">Volume</button>
+            </center>
+        </div>
+        <script type="text/javascript">
+            $('.ui-icon-loading').remove();
+            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                // http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js
+                $.getScript("https://cdn.socket.io/socket.io-1.4.3.js").done(function(script, textStatus) {
+                    $.getScript("control.js").done(function(script, textStatus) {
+                        $('#mobileContent').show().css('display', 'table');
+                    });
+                });
+            } else {
+                $('#desktopContent').show();
+            }
+        </script>
+    </body>
+</html>

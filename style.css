@@ -1,0 +1,74 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+#mobileContent, #desktopContent {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+#shadow {
+    position: absolute;
+    background: rgba(000, 000, 000, 0.5);
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.table {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: table;
+    vertical-align: middle;
+}
+.cell {
+    width: 100%;
+    height: 100%;
+    display: table-row;
+    vertical-align: middle;
+}
+.remote {
+    width: 300px;
+    height: 298px;
+    display: table-cell;
+    vertical-align: middle;
+    background: url('img/panel.png') no-repeat center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button {
+    margin: 18px;
+    width: 40px;
+    height: 39px;
+}
+.button.play {
+    background: url('img/play.png');
+}
+.button.pause {
+    background: url('img/pause.png');
+}
+.button.stop {
+    background: url('img/stop.png');
+}
+.button.mute {
+    background: url('img/mute.png');
+}
+.button.mute:active {
+    background: url('img/mute.active.png');
+}
+.button.pause:active {
+    background: url('img/pause.active.png');
+}
+.button.play:active {
+    background: url('img/play.active.png');
+}
+.button.stop:active {
+    background: url('img/stop.active.png');
+}
+button {
+    width: 150px;
+    font: 18px Verdana;
+}
